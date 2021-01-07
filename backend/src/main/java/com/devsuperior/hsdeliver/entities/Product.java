@@ -1,12 +1,18 @@
 package com.devsuperior.hsdeliver.entities;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+/**
+ * Projeto java web com spring boot - hsdeliver
+ * Desenvolvedor: Antonio Halyson   - 
+ * Email: halisonsc5@gmail.com
+ * Data: 07/01/2021
+ ***/
 
 @Entity
 @Table(name = "tb_product")

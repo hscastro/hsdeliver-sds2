@@ -11,6 +11,13 @@ import com.devsuperior.hsdeliver.dto.ProductDTO;
 import com.devsuperior.hsdeliver.entities.Product;
 import com.devsuperior.hsdeliver.repositories.ProductRepository;
 
+/**
+ * Projeto java web com spring boot - hsdeliver
+ * Desenvolvedor: Antonio Halyson
+ * Email: halisonsc5@gmail.com
+ * Data: 07/01/2021
+ ***/
+
 @Service
 public class ProductService {
 
@@ -18,7 +25,7 @@ public class ProductService {
 	private ProductRepository repository;
 	
 	@Transactional(readOnly = true)
-	public List<ProductDTO> findAll(){
+	public List<ProductDTO> findAllByOrderByNameAsc(){
 		List<Product> list = repository.findAll();
 		return list.stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
 	}

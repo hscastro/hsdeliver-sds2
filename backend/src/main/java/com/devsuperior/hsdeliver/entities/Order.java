@@ -13,6 +13,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+/**
+ * Projeto java web com spring boot - hsdeliver
+ * Desenvolvedor: Antonio Halyson
+ * Email: halisonsc5@gmail.com
+ * Data: 07/01/2021
+ ***/
 
 @Entity
 @Table(name = "tb_order")

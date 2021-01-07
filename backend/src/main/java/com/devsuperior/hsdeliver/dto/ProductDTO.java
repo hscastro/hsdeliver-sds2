@@ -4,6 +4,13 @@ import java.io.Serializable;
 
 import com.devsuperior.hsdeliver.entities.Product;
 
+/**
+ * Projeto java web com spring boot - hsdeliver
+ * Desenvolvedor: Antonio Halyson
+ * Email: halisonsc5@gmail.com
+ * Data: 07/01/2021
+ ***/
+
 public class ProductDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
