@@ -9,5 +9,5 @@ import com.devsuperior.hsdeliver.entities.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
   
-	List<Product> findAllByOrderByNameAsc();
+	List<Product> findAllByOrderByNameDesc();
 }

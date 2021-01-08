@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.devsuperior.hsdeliver.dto.ProductDTO;
-import com.devsuperior.hsdeliver.services.ProductService;
+import com.devsuperior.hsdeliver.dto.OrderDTO;
+import com.devsuperior.hsdeliver.services.OrderService;
+
 
 /**
  * Projeto java web com spring boot - hsdeliver
@@ -19,15 +20,15 @@ import com.devsuperior.hsdeliver.services.ProductService;
  ***/
 
 @RestController
-@RequestMapping(value = "/products")
-public class ProductController {
+@RequestMapping(value = "/orders")
+public class OrderController {
 
 	@Autowired
-	private ProductService service;
+	private OrderService service;
 
 	@GetMapping
-	public ResponseEntity<List<ProductDTO>> findAll() {
-		List<ProductDTO> list = service.findAllByOrderByNameDesc();
+	public ResponseEntity<List<OrderDTO>> findAll() {
+		List<OrderDTO> list = service.findOrderWithProducts();
 		return ResponseEntity.ok().body(list);
 	}
 

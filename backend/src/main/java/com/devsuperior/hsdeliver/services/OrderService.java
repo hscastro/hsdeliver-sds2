@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.hsdeliver.dto.ProductDTO;
-import com.devsuperior.hsdeliver.entities.Product;
-import com.devsuperior.hsdeliver.repositories.ProductRepository;
+import com.devsuperior.hsdeliver.dto.OrderDTO;
+import com.devsuperior.hsdeliver.entities.Order;
+import com.devsuperior.hsdeliver.repositories.OrderRepository;
 
 /**
  * Projeto java web com spring boot - hsdeliver
@@ -19,15 +19,15 @@ import com.devsuperior.hsdeliver.repositories.ProductRepository;
  ***/
 
 @Service
-public class ProductService {
+public class OrderService {
 
 	@Autowired
-	private ProductRepository repository;
+	private OrderRepository repository;
 	
 	@Transactional(readOnly = true)
-	public List<ProductDTO> findAllByOrderByNameDesc(){
-		List<Product> list = repository.findAllByOrderByNameDesc();
-		return list.stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
+	public List<OrderDTO> findOrderWithProducts(){
+		List<Order> list = repository.findOrderWithProducts();
+		return list.stream().map(x -> new OrderDTO(x)).collect(Collectors.toList());
 	}
 	
 	
