@@ -15,14 +15,14 @@ e a implantação na plataforma Heroku. A segunda parte do projeto o front-end f
 2 - Read (Ler/selecionar);<br/>
 3 - Update (editar);<br/>
 
-Link da API
+Link da API:<br/>
 https://halyson-hsdeliver.herokuapp.com/
 
 Use: 
-/product
-/orders
+/product<br/>
+/orders<br/>
 
-para as buscar.
+para as buscar.<br/>
 
 Obs: Essas operações são mapeadas para as entidades (Product e Order), usando alguns padrões de projeto como DTO (Data Transfer Object).
 
