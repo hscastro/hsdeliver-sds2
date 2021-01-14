@@ -40,6 +40,8 @@ public class Order implements Serializable {
 	
 	private OrderStatus status;
 	
+	private Double total;
+	
 	@ManyToMany
 	@JoinTable(name = "tb_order_product",
 		joinColumns = @JoinColumn(name = "order_id"),
@@ -111,6 +113,16 @@ public class Order implements Serializable {
 	public Set<Product> getProducts() {
 		return products;
 	}
+	
+	public Double getTotal() {
+		double sum = 0.0;
+		
+		for(Product p : products) {
+			sum+= p.getPrice();
+		}
+		
+		return sum;
+	}
 
 	@Override
 	public int hashCode() {
@@ -140,7 +152,7 @@ public class Order implements Serializable {
 	@Override
 	public String toString() {
 		return "Order [id=" + id + ", address=" + address + ", latitude=" + latitude + ", longitude=" + longitude
-				+ ", moment=" + moment + ", orderStatus=" + status + "]";
+				+ ", moment=" + moment + ", status=" + status + ", total=" + total + ", products=" + products + "]";
 	}
 	
 	

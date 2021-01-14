@@ -25,11 +25,26 @@ public class OrderDTO implements Serializable {
 	
 	private OrderStatus status;
 	
+	private Double total;
+	
 	private List<ProductDTO> products = new ArrayList<>();
 	
 	public OrderDTO() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public OrderDTO(Long id, String address, double latitude, double longitude, Instant moment, OrderStatus status,
+			Double total) {
+		super();
+		this.id = id;
+		this.address = address;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.moment = moment;
+		this.status = status;
+		this.total = total;
+	}
+
 
 	public OrderDTO(Order entity) {
 		id = entity.getId();
@@ -38,8 +53,17 @@ public class OrderDTO implements Serializable {
 		longitude = entity.getLongitude();
 		moment = entity.getMoment();
 		status = entity.getOrderStatus();
+		total = entity.getTotal();
 		products = entity.getProducts().stream()
 				.map(x -> new ProductDTO(x)).collect(Collectors.toList());
+	}
+
+	public Double getTotal() {
+		return total;
+	}
+
+	public void setTotal(Double total) {
+		this.total = total;
 	}
 
 	public Long getId() {
